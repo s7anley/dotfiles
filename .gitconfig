@@ -1,0 +1,45 @@
+[user]
+	name = Ján Koščo
+	email = 3k.stanley@gmail.com
+[core]
+	autocrlf = input
+	safecrlf = false
+[alias]
+	f = fetch
+	ff = !git merge --ff-only origin/`git branch 2>/dev/null | grep '*' | cut -d\" \" -f2-`
+	st = status
+	cm = commit
+	cma = commit --amend
+	br = branch
+	co = checkout
+	df = diff
+	rb = rebase
+	rbi = rebase -i
+	rbc = rebase --continue
+	cp = cherry-pick
+	su = submodule update
+	l = log --graph --decorate --pretty=oneline --abbrev-commit
+	ll = log --graph --decorate --pretty=oneline --abbrev-commit --all
+	ld = log -p -m
+	ls = log --stat -m
+	stats = shortlog -n -s --no-merges
+	rmb = !sh -c 'git push origin :$1' -
+[remote "origin"]
+	push = HEAD
+[diff]
+	mnemonicprefix = true
+[color]
+	ui = auto
+[color "branch"]
+	current = yellow reverse
+	local = yellow
+	remote = green
+[color "diff"]
+	meta = yellow bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
+[color "status"]
+	added = green
+	changed = yellow
+	untracked = cyan
