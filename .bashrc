@@ -22,3 +22,15 @@ for file in "$HOME/."{bash_aliases,bash_prompt,bash_functions}; do
     fi
 done
 unset file
+
+#RVM
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+
+# used by Git (commit messages, rebase, ...)
+export EDITOR=vim
+
+# Python and Django setup
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/django_projects
+source /usr/local/bin/virtualenvwrapper.sh
