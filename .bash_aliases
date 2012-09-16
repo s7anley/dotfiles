@@ -1,5 +1,4 @@
 # Packages
-alias update='sudo apt-get update'
 alias install='sudo apt-get install'
 alias purge='sudo apt-get purge'
 alias upgrade='sudo apt-get update && sudo apt-get upgrade'
@@ -22,3 +21,4 @@ alias la='ls -A'
 alias l='ls -CF'
 alias s='subl'
 alias sn='subl .'
+alias v='vim'
