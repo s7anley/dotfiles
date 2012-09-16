@@ -1,6 +1,6 @@
-# Sleep after $1 minutes
+# Sleep
 function off() {
-    xset dpms force off && echo 'gnome-screensaver-command --lock; pmi action suspend' | at now + $1 minutes
+    gnome-screensaver-command --lock && pmi action suspend
 }
 
 # Go up in directory tree, ex. up 3
