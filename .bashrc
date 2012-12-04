@@ -16,7 +16,7 @@ shopt -s histappend
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
 # Load dotfiles
-for file in "$HOME/."{bash_aliases,bash_prompt,bash_functions}; do
+for file in "$HOME/."{aliases,bash_prompt,functions}; do
     if [ -f "$file" ]; then
     . $file
     fi
@@ -29,8 +29,3 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 # used by Git (commit messages, rebase, ...)
 export EDITOR=vim
-
-# Python and Django setup
-export WORKON_HOME=$HOME/.virtualenvs
-export PROJECT_HOME=$HOME/django_projects
-source /usr/local/bin/virtualenvwrapper.sh

@@ -7,23 +7,27 @@
 [alias]
 	f = fetch
 	ff = !git merge --ff-only origin/`git branch 2>/dev/null | grep '*' | cut -d\" \" -f2-`
-	st = status
+	st = status -s
+	br = branch
+	cl = clone
 	cm = commit
 	cma = commit --amend
-	br = branch
 	co = checkout
+	cp = cherry-pick
 	df = diff
+	dl = "!git ll -1"
+	dlc = diff --cached HEAD^
+	l = log --graph --decorate --oneline
+	ld = log -p -m
+	ll = log --graph --decorate --oneline --all
+	ls = log --stat -m
 	rb = rebase
 	rbi = rebase -i
 	rbc = rebase --continue
-	cp = cherry-pick
-	su = submodule update
-	l = log --graph --decorate --pretty=oneline --abbrev-commit
-	ll = log --graph --decorate --pretty=oneline --abbrev-commit --all
-	ld = log -p -m
-	ls = log --stat -m
-	stats = shortlog -n -s --no-merges
+	rh = reset --hard
 	rmb = !sh -c 'git push origin :$1' -
+	su = submodule update
+	stats = shortlog -n -s --no-merges
 [remote "origin"]
 	push = HEAD
 [diff]

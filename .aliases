@@ -9,16 +9,25 @@ alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
-# Shortcuts
-alias ~='cd ~'
-alias -- -="cd -"
+# General shortcuts for functions or apps
 alias c='clear'
-alias dt='cd ~/Desktop'
 alias h='history'
 alias g='git'
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
 alias s='subl'
 alias sn='subl .'
 alias v='vim'
+alias y='yeoman'
+
+# Shortcuts for moving a directory inspect
+alias ~='cd ~'
+alias -- -="cd -"
+alias dt='cd ~/Desktop'
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+
+# Quicker development
+alias hosts='sudo $EDITOR /etc/hosts'
+
+# Enable aliases to be sudo’ed
+alias sudo='sudo '
