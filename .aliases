@@ -30,3 +30,7 @@ alias hosts='sudo $EDITOR /etc/hosts'
 
 # Enable aliases to be sudo’ed
 alias sudo='sudo '
+
+# Utils
+alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date'
+alias week='date +%V'
