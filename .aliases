@@ -1,8 +1,7 @@
 # Packages
 alias install='sudo apt-get install'
 alias purge='sudo apt-get purge'
-alias upgrade='sudo apt-get update && sudo apt-get upgrade'
-alias clean='sudo apt-get autoremove; sudo apt-get autoclean'
+alias update='sudo apt-get update; sudo apt-get upgrade; sudo apt-get autoremove; sudo apt-get autoclean; npm update -g npm; npm update -g;'
 
 # Color settings
 alias ls='ls --color=auto'
