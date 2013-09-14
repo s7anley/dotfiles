@@ -4,8 +4,9 @@
 [core]
 	autocrlf = input
 	safecrlf = false
+	excludesfile = ~/.gitignore
 [alias]
-	f = fetch
+	f = fetch -all
 	ff = !git merge --ff-only origin/`git branch 2>/dev/null | grep '*' | cut -d\" \" -f2-`
 	st = status -s
 	br = branch
