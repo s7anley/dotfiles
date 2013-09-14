@@ -1,3 +1,6 @@
+# Quicker reload
+alias reload='source ~/.bashrc'
+
 # Packages
 alias install='sudo apt-get install'
 alias purge='sudo apt-get purge'
