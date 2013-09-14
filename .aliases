@@ -2,6 +2,7 @@
 alias install='sudo apt-get install'
 alias purge='sudo apt-get purge'
 alias upgrade='sudo apt-get update && sudo apt-get upgrade'
+alias clean='sudo apt-get autoremove; sudo apt-get autoclean'
 
 # Color settings
 alias ls='ls --color=auto'
@@ -11,10 +12,8 @@ alias egrep='egrep --color=auto'
 
 # General shortcuts for functions or apps
 alias c='clear'
-alias h='history'
 alias g='git'
 alias s='subl'
-alias sn='subl .'
 alias v='vim'
 alias y='yeoman'
 
