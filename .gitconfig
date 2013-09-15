@@ -8,7 +8,7 @@
 [alias]
 	f = fetch -all
 	ff = !git merge --ff-only origin/`git branch 2>/dev/null | grep '*' | cut -d\" \" -f2-`
-	st = status -s
+	st = status -sb
 	br = branch
 	cl = clone
 	cm = commit
@@ -16,6 +16,7 @@
 	co = checkout
 	cp = cherry-pick
 	df = diff
+	dfc = diff --cached
 	dl = "!git ll -1"
 	dlc = diff --cached HEAD^
 	l = log --graph --decorate --oneline
