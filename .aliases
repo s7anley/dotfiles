@@ -4,7 +4,7 @@ alias reload='source ~/.bashrc'
 # Packages
 alias install='sudo apt-get install'
 alias purge='sudo apt-get purge'
-alias update='sudo apt-get update; sudo apt-get upgrade; sudo apt-get autoremove; sudo apt-get autoclean; npm update -g npm; npm update -g;'
+alias update='sudo apt-get update; sudo apt-get upgrade; sudo apt-get autoremove; sudo apt-get autoclean; sudo npm update -g npm; sudo npm update -g;'
 
 # Color settings
 alias ls='ls --color=auto'
