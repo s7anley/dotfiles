@@ -5,7 +5,7 @@
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
 # Load dotfiles
-for file in "$HOME/."{aliases,bash_prompt,exports,functions}; do
+for file in "$HOME/"{.aliases,.bash_prompt,.exports,.functions,bin/z/z.sh}; do
     [ -r "$file" ] && source "$file"
 done
 unset file
