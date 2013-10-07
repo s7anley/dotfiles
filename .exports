@@ -13,3 +13,6 @@ export HISTIGNORE="ls:ls *:ll:cd:cd -:c:g st:g ll:g df:g f:date:* --help:h"
 
 # Default editor
 export EDITOR=vim
+
+# Supporting more cooolors! :)
+export TERM="xterm-256color"

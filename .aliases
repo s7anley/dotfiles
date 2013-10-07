@@ -1,10 +1,11 @@
 # Quicker reload
-alias reload='source ~/.bashrc'
+alias reload=". ~/.zshrc && echo 'Config reloaded'"
+alias zshrc="vim ~/.zshrc && reload"
 
 # Packages
 alias install='sudo apt-get install'
 alias purge='sudo apt-get purge'
-alias update='sudo apt-get update; sudo apt-get upgrade; sudo apt-get autoremove; sudo apt-get autoclean; sudo npm update -g npm; sudo npm update -g;'
+alias update='adg; sudo apt-get autoremove; aac; sudo npm update -g npm; sudo npm update -g;'
 
 # Color settings
 alias ls='ls --color=auto'
