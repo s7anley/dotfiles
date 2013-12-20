@@ -1,5 +1,4 @@
-.idea
-.sass-cache
-.zfproject.xml
-.DS_Store
-node_modules
+caches/
+link/.ssh/authorized_keys
+link/.ssh/id_*
+link/.ssh/known_hosts
