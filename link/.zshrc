@@ -4,4 +4,4 @@ for file in ~/.dotfiles/source/*; do
   source "$file"
 done
 
-export PATH=~/.dotfiles/bin:$PATH
+export PATH=/usr/local/bin:~/.dotfiles/bin:$PATH
