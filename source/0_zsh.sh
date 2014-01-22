@@ -10,7 +10,7 @@ DISABLE_AUTO_UPDATE="true"
 DISABLE_AUTO_TITLE="true"
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 
-plugins=(bower composer extract git-extras npm symfony2 web-search brew)
+plugins=(bower brew composer extract git-extras npm postgres symfony2 web-search)
 
 # Load OH MY ZSH
 source $ZSH/oh-my-zsh.sh
