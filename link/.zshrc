@@ -4,4 +4,5 @@ for file in ~/.dotfiles/source/*; do
   source "$file"
 done
 
-export PATH=/usr/local/bin:~/.dotfiles/bin:$PATH
+LANG=en_US
+export PATH=/usr/local/bin:/usr/local/opt/php55/bin:~/.dotfiles/bin:$PATH

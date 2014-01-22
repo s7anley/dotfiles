@@ -11,11 +11,15 @@ if [[ "$(type -P brew)" ]]; then
   e_header "Updating Homebrew"
   brew doctor
   brew update
+  brew tap josegonzalez/homebrew-php
+
 
   # Install Homebrew recipes.
   recipes=(
     git-extras
     midnight-commander
+    php55
+    composer
     ssh-copy-id
     zsh
   )
