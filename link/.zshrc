@@ -4,4 +4,4 @@ for file in ~/.dotfiles/source/*; do
   source "$file"
 done
 
-export PATH=$PATH:/home/stanley/.nave/installed/0.11.8/bin
+export PATH=~/.dotfiles/bin:$PATH
