@@ -16,6 +16,7 @@ if [[ "$(type -P brew)" ]]; then
 
   # Install Homebrew recipes.
   recipes=(
+    icu4c
     git-extras
     midnight-commander
     php55

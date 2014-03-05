@@ -3,3 +3,4 @@
 .zfproject.xml
 .DS_Store
 node_modules
+.vagrant
