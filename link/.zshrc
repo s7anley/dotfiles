@@ -5,4 +5,4 @@ for file in ~/.dotfiles/source/*; do
 done
 
 LANG=en_US
-export PATH=/usr/local/bin:/usr/local/opt/php55/bin:~/.dotfiles/bin:$PATH
+export PATH=/usr/local/bin:/usr/local/opt/php55/bin:~/.dotfiles/bin:$PATH:$HOME/.rvm/bin
