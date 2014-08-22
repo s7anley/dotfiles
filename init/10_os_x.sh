@@ -16,6 +16,7 @@ if [[ "$(type -P brew)" ]]; then
 
   # Install Homebrew recipes.
   recipes=(
+    coreutils
     icu4c
     git-extras
     midnight-commander
