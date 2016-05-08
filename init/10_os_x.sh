@@ -16,13 +16,17 @@ if [[ "$(type -P brew)" ]]; then
 
   # Install Homebrew recipes.
   recipes=(
+    brew-cask
+    composer
     coreutils
     icu4c
     git-extras
     midnight-commander
-    php55
-    composer
+    siege
     ssh-copy-id
+    thefuck
+    tree
+    wget
     zsh
   )
 
