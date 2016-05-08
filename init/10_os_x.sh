@@ -36,3 +36,9 @@ if [[ "$(type -P brew)" ]]; then
     brew install $list
   fi
 fi
+
+# Install Homebrew.
+if [[ ! "$(type -P brew)" ]]; then
+  e_header "Installing GVM"
+  bash < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
+fi
