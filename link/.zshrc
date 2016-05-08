@@ -4,6 +4,10 @@ for file in ~/.dotfiles/source/*; do
   source "$file"
 done
 
+if [[ -f ~/.custom.zsh ]]; then
+    source  ~/.custom.zsh
+fi
+
 LANG=en_US
 export PATH=/usr/local/bin:~/.dotfiles/bin:$PATH:$HOME/.rvm/bin
 export PATH="/usr/local/sbin:$PATH"
