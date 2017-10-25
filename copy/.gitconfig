@@ -1,35 +1,70 @@
 [user]
 	name = Ján Koščo
 	email = 3k.stanley@gmail.com
+	signingkey = 3k.stanley@gmail.com
 [core]
 	autocrlf = input
 	safecrlf = false
 	excludesfile = ~/.gitignore
 [alias]
-	f = fetch --all
-	ff = !git merge --ff-only origin/`git branch 2>/dev/null | grep '*' | cut -d\" \" -f2-`
+	# base
 	st = status -sb
 	br = branch
+	brl = branch -a
 	cl = clone
+	p = push
+	f = fetch --all --prune
+
+	# fast forward merged
+	ff = !git merge --ff-only origin/`git branch 2>/dev/null | grep '*' | cut -d\" \" -f2-`
+
+	# commit
+	a = add -p
 	cm = commit
 	cma = commit --amend
-	co = checkout
+	empty = commit --allow-empty -m 'Initial commit'
 	cp = cherry-pick
+
+	# checkout
+	co = checkout
+	cob = checkout -b
+	which = !git branch | grep -i
+	lucky = !sh -c 'git checkout $(git which $1 -m1)' -
+
+	# stash
+	ss = stash save
+	sa = stash apply
+
+	# diffs
 	df = diff
 	dfc = diff --cached
 	dl = "!git ll -1"
 	dlc = diff --cached HEAD^
+
+	# log
 	l = log --graph --decorate --oneline
 	ld = log -p -m
 	ll = log --graph --decorate --oneline --all
 	ls = log --stat -m
+
+	# rebase
 	rb = rebase
 	rbi = rebase -i
 	rbc = rebase --continue
+
+	# reset
+	r = reset
 	rh = reset --hard
-	rmb = !sh -c 'git push origin :$1' -
-	su = submodule update
+	uncm = reset --soft HEAD~1
+
+	# delete
+	rmb = branch -D
+	rmrb = !sh -c 'git push origin :$1' - # remote branch
+	rmmb = "!git branch --merged | grep -v '*' | xargs -n 1 git branch -d" # all merged
+
+	# stats
 	stats = shortlog -n -s --no-merges
+
 [remote "origin"]
 	push = HEAD
 [diff]
@@ -49,3 +84,5 @@
 	added = green
 	changed = yellow
 	untracked = cyan
+[commit]
+	gpgsign = true

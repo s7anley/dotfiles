@@ -7,6 +7,7 @@ alias v='vim'
 alias hosts='sudo $EDITOR /etc/hosts'
 
 # Utils
+alias ssha='ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null'
 alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date'
 alias week='date +%V'
 alias wb='curl -4 http://wttr.in/Berlin'
