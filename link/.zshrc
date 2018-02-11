@@ -4,14 +4,21 @@ for file in ~/.dotfiles/source/*; do
   source "$file"
 done
 
+fpath=(~/.zsh/completions $fpath)
+local file
+for file in ~/.zsh/functions/*; do
+  source "$file"
+done
+
 if [[ -f ~/.custom.zsh ]]; then
     source  ~/.custom.zsh
 fi
 
-LANG=en_US
-export PATH=/usr/local/bin:~/.dotfiles/bin:$PATH:$HOME/.rvm/bin
-export PATH="/usr/local/sbin:$PATH"
 export GVM_ROOT=/Users/jankosco/.gvm
 source $GVM_ROOT/scripts/gvm-default
 
-eval "$(thefuck --alias)"
+source /usr/local/bin/virtualenvwrapper.sh
+source /usr/local/opt/git-extras/share/git-extras/git-extras-completion.zsh
+source ~/.dotfiles/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+eval "$(jump shell --bind=z)"
+eval "$(direnv hook zsh)"

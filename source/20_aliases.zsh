@@ -1,13 +1,12 @@
-# General shortcuts for functions or apps
 alias g='git'
-alias s='subl'
 alias v='vim'
 
-# Quicker development
-alias hosts='sudo $EDITOR /etc/hosts'
-
-# Utils
 alias ssha='ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null'
-alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date'
-alias week='date +%V'
-alias wb='curl -4 http://wttr.in/Berlin'
+
+alias ~='cd ~'
+alias dt='cd ~/Desktop'
+alias l='ls -lh'
+alias ls='ls -GpF'
+alias ll='ls -alGpF'
+
+alias pip='noglob pip'
