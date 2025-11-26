@@ -2,3 +2,4 @@ caches/
 link/.ssh/*
 link/.vim/.netrwhist
 .idea/
+link/fish/completions/
