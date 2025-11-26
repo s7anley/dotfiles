@@ -1,7 +1,17 @@
-Stanley's dotfiles.
-========
+# dotfiles
 
-My .files from Ubuntu. Files will be updated over time, these are intial files after I started using Ubuntu more often.
-Most inspiration is from [Thread "Show us your .bashrc!"](http://ubuntuforums.org/showthread.php?t=679762 "Show us your .bashrc!"),[mathiasbynens dotfiles](https://github.com/mathiasbynens/dotfiles "dotfiles") and [paulirish dotfiles](https://github.com/paulirish/dotfiles "dotfiles").
+Personal dotfiles for macOS with fish shell.
 
-If you have any good sites with tips and tricks for dotfiles, let me now. Thanks.
+## Install
+
+```bash
+git clone https://github.com/s7anley/dotfiles.git ~/.dotfiles
+~/.dotfiles/dotfiles
+```
+
+## What's included
+
+- **fish** - shell config, functions, completions, aliases
+- **git** - aliases, difftastic integration
+- **vim** - minimal config with twilight colorscheme
+- **homebrew** - cli tools and cask apps
