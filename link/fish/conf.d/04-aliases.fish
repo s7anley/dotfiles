@@ -5,4 +5,3 @@ abbr v vim
 abbr bwre brew
 abbr brwe brew
 abbr d docker
-alias z zellij

@@ -1,74 +1,80 @@
 [user]
-	name = Ján Koščo
+	name = Jany Koščo
 	email = 3k.stanley@gmail.com
 	signingkey = 3k.stanley@gmail.com
+
+[url "ssh://git@github.com/"]
+	insteadOf = https://github.com/
+
+[include]
+    path = ~/.gitconfig.local
+
+[help]
+	autoCorrect = prompt
+
 [core]
 	autocrlf = input
-	safecrlf = false
 	excludesfile = ~/.gitignore
+	attributesfile = ~/.gitattributes
+
 [alias]
-	# base
-	st = status -sb
+	s = status -sb
+	st = s
 	br = branch
 	brl = branch -a
-	cl = clone
-	p = push
-	f = fetch --all --prune
+	p = push origin HEAD
+	fp = push --force-with-lease origin HEAD
+	f = fetch --all --prune --tags
 
 	# fast forward merged
 	ff = !git merge --ff-only origin/`git branch 2>/dev/null | grep '*' | cut -d\" \" -f2-`
 
-	# commit
 	a = add -p
-	cm = commit
+	cm = commit -m
+	cf = commit --fixup
 	cma = commit --amend
+	cmaf = commit --amend -a --no-edit
 	empty = commit --allow-empty -m 'Initial commit'
 	cp = cherry-pick
 
-	# checkout
 	co = checkout
 	cob = checkout -b
-	which = !git branch | grep -i
-	lucky = !sh -c 'git checkout $(git which $1 -m1)' -
+	col = !fish -c 'git_fuzzy_checkout_local_branch'
+	cor = !fish -c 'git_fuzzy_checkout_remote_branch'
+	fresh = !git f && git co origin/main
 
-	# stash
-	ss = stash save
-	sa = stash apply
+	ss = stash
+	ssa = stash save -u
+	sp = stash pop
 
-	# diffs
 	df = diff
 	dfc = diff --cached
 	dl = "!git ll -1"
 	dlc = diff --cached HEAD^
+	dfi = icdiff
 
-	# log
 	l = log --graph --decorate --oneline
-	ld = log -p -m
+	ld = log -p -m --ext-diff
 	ll = log --graph --decorate --oneline --all
 	ls = log --stat -m
 
-	# rebase
 	rb = rebase
 	rbi = rebase -i
 	rbc = rebase --continue
+	rbm = !fish -c 'git_rebase_onto_main'
 
-	# reset
 	r = reset
 	rh = reset --hard
 	uncm = reset --soft HEAD~1
 
-	# delete
 	rmb = branch -D
-	rmrb = !sh -c 'git push origin :$1' - # remote branch
-	rmmb = "!git branch --merged | grep -v '*' | xargs -n 1 git branch -d" # all merged
-
-	# stats
-	stats = shortlog -n -s --no-merges
 
 [remote "origin"]
 	push = HEAD
 [diff]
 	mnemonicprefix = true
+	external = difft
+
 [color]
 	ui = auto
 [color "branch"]
@@ -84,5 +90,14 @@
 	added = green
 	changed = yellow
 	untracked = cyan
-[commit]
-	gpgsign = true
+[icdiff]
+	options = --highlight --line-numbers
+[init]
+	defaultBranch = main
+[rebase]
+	autosquash = true
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true

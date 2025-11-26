@@ -1,35 +1,22 @@
 if [[ "$(type -P brew)" ]]; then
-  e_header "Adding cask taps to homebrew"
-  brew tap caskroom/cask
-  brew tap buo/cask-upgrade
+  e_header "Installing cask applications"
 
   apps=(
-    1password
-    atom
-    caffeine
-    calibre
-    dropbox
-    evernote
-    google-chrome
-    firefox
-    flux
-    iterm2
-    libreoffice
-    mplayerx
-    rcdefaultapp
-    rdm
-    soundcleod
-    spectacle
+    alt-tab
+    arc
+    iina
+    marta
+    orbstack
+    raycast
+    rectangle
     spotify
     the-unarchiver
-    toggl
-    tunnelblick
-    utorrent
+    warp
   )
 
-  list="$(to_install "${apps[*]}" "$(brew cask list)")"
+  list="$(to_install "${apps[*]}" "$(brew list --cask)")"
   if [[ "$list" ]]; then
     e_header "Installing applications: $list"
-    brew cask install $list
+    brew install --cask $list
   fi
 fi

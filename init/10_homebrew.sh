@@ -1,7 +1,7 @@
 # Install Homebrew.
 if [[ ! "$(type -P brew)" ]]; then
   e_header "Installing homebrew"
-  true | ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
 if [[ "$(type -P brew)" ]]; then
@@ -9,31 +9,24 @@ if [[ "$(type -P brew)" ]]; then
   brew doctor
   brew update
 
-  e_header "Adding taps to homebrew"
-  brew tap josegonzalez/homebrew-php
+  e_header "Installing homebrew recipes"
 
   recipes=(
-    composer
-    coreutils
-    direnv
+    bat
+    difftastic
+    eza
+    fish
+    fzf
+    gh
     git
-    git-extras
-    icu4c
     jq
     jump
-    midnight-commander
-    nave
-    pgcli
-    php-cs-fixer
-    siege
-    speedtest-cli
-    ssh-copy-id
-    terraform
-    tflint
-    thefuck
-    tree
-    wget
-    zsh
+    k6
+    k9s
+    kubectx
+    kubernetes-cli
+    lazygit
+    mise
   )
 
   list="$(to_install "${recipes[*]}" "$(brew list)")"
