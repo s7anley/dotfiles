@@ -22,7 +22,14 @@ e_header "Copying files"
 for file in copy/.*; do
   [[ -f "$file" ]] || continue
   name="$(basename "$file")"
-  cp "$file" ~/ && e_success "$name"
+  target="$HOME/$name"
+
+  if [[ -f "$target" ]]; then
+    e_success "$name (already exists)"
+    continue
+  fi
+
+  cp "$file" "$target" && e_success "$name"
 done
 
 e_header "Linking files"
@@ -30,6 +37,7 @@ shopt -s dotglob
 for file in link/*; do
   [[ -e "$file" ]] || continue
   name="$(basename "$file")"
+  source="$DOTFILES_DIR/$file"
 
   if [[ "$name" == .* ]]; then
     target="$HOME/$name"
@@ -40,14 +48,17 @@ for file in link/*; do
     target="$HOME/.$name"
   fi
 
-  if [[ -L "$target" ]]; then
-    rm "$target"
-  elif [[ -e "$target" ]]; then
+  # Symlink exists and points to correct location - nothing to do
+  if [[ -L "$target" && "$(readlink "$target")" == "$source" ]]; then
+    e_success "$name (already linked)"
+    continue
+  # Symlink or file already exists - don't overwrite
+  elif [[ -e "$target" || -L "$target" ]]; then
     e_error "Skipping $name (already exists)"
     continue
   fi
 
-  ln -s "$DOTFILES_DIR/$file" "$target" && e_success "$name -> $target"
+  ln -s "$source" "$target" && e_success "$name -> $target"
 done
 shopt -u dotglob
 
