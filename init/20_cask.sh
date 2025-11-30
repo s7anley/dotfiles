@@ -12,6 +12,7 @@ if [[ "$(type -P brew)" ]]; then
     spotify
     the-unarchiver
     warp
+    cleanshot
   )
 
   list="$(to_install "${apps[*]}" "$(brew list --cask)")"
